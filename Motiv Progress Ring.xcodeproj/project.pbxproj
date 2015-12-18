@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C48101761C24C1D4000E67F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101751C24C1D4000E67F7 /* main.m */; };
+		C48101791C24C1D4000E67F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101781C24C1D4000E67F7 /* AppDelegate.m */; };
+		C481017C1C24C1D4000E67F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C481017B1C24C1D4000E67F7 /* ViewController.m */; };
+		C481017F1C24C1D4000E67F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C481017D1C24C1D4000E67F7 /* Main.storyboard */; };
+		C48101821C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C48101801C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld */; };
+		C48101841C24C1D4000E67F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48101831C24C1D4000E67F7 /* Assets.xcassets */; };
+		C48101871C24C1D4000E67F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48101851C24C1D4000E67F7 /* LaunchScreen.storyboard */; };
+		C48101921C24C1D4000E67F7 /* Motiv_Progress_RingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101911C24C1D4000E67F7 /* Motiv_Progress_RingTests.m */; };
+		C481019D1C24C1D4000E67F7 /* Motiv_Progress_RingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C481019C1C24C1D4000E67F7 /* Motiv_Progress_RingUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C481018E1C24C1D4000E67F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C48101691C24C1D4000E67F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C48101701C24C1D4000E67F7;
+			remoteInfo = "Motiv Progress Ring";
+		};
+		C48101991C24C1D4000E67F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C48101691C24C1D4000E67F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C48101701C24C1D4000E67F7;
+			remoteInfo = "Motiv Progress Ring";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C48101711C24C1D4000E67F7 /* Motiv Progress Ring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Motiv Progress Ring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48101751C24C1D4000E67F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C48101771C24C1D4000E67F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C48101781C24C1D4000E67F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C481017A1C24C1D4000E67F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C481017B1C24C1D4000E67F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C481017E1C24C1D4000E67F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C48101811C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Motiv_Progress_Ring.xcdatamodel; sourceTree = "<group>"; };
+		C48101831C24C1D4000E67F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C48101861C24C1D4000E67F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C48101881C24C1D4000E67F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C481018D1C24C1D4000E67F7 /* Motiv Progress RingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Motiv Progress RingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48101911C24C1D4000E67F7 /* Motiv_Progress_RingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Motiv_Progress_RingTests.m; sourceTree = "<group>"; };
+		C48101931C24C1D4000E67F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C48101981C24C1D4000E67F7 /* Motiv Progress RingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Motiv Progress RingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C481019C1C24C1D4000E67F7 /* Motiv_Progress_RingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Motiv_Progress_RingUITests.m; sourceTree = "<group>"; };
+		C481019E1C24C1D4000E67F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C481016E1C24C1D4000E67F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C481018A1C24C1D4000E67F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48101951C24C1D4000E67F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C48101681C24C1D4000E67F7 = {
+			isa = PBXGroup;
+			children = (
+				C48101731C24C1D4000E67F7 /* Motiv Progress Ring */,
+				C48101901C24C1D4000E67F7 /* Motiv Progress RingTests */,
+				C481019B1C24C1D4000E67F7 /* Motiv Progress RingUITests */,
+				C48101721C24C1D4000E67F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C48101721C24C1D4000E67F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C48101711C24C1D4000E67F7 /* Motiv Progress Ring.app */,
+				C481018D1C24C1D4000E67F7 /* Motiv Progress RingTests.xctest */,
+				C48101981C24C1D4000E67F7 /* Motiv Progress RingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C48101731C24C1D4000E67F7 /* Motiv Progress Ring */ = {
+			isa = PBXGroup;
+			children = (
+				C48101771C24C1D4000E67F7 /* AppDelegate.h */,
+				C48101781C24C1D4000E67F7 /* AppDelegate.m */,
+				C481017A1C24C1D4000E67F7 /* ViewController.h */,
+				C481017B1C24C1D4000E67F7 /* ViewController.m */,
+				C481017D1C24C1D4000E67F7 /* Main.storyboard */,
+				C48101831C24C1D4000E67F7 /* Assets.xcassets */,
+				C48101851C24C1D4000E67F7 /* LaunchScreen.storyboard */,
+				C48101881C24C1D4000E67F7 /* Info.plist */,
+				C48101801C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld */,
+				C48101741C24C1D4000E67F7 /* Supporting Files */,
+			);
+			path = "Motiv Progress Ring";
+			sourceTree = "<group>";
+		};
+		C48101741C24C1D4000E67F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C48101751C24C1D4000E67F7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C48101901C24C1D4000E67F7 /* Motiv Progress RingTests */ = {
+			isa = PBXGroup;
+			children = (
+				C48101911C24C1D4000E67F7 /* Motiv_Progress_RingTests.m */,
+				C48101931C24C1D4000E67F7 /* Info.plist */,
+			);
+			path = "Motiv Progress RingTests";
+			sourceTree = "<group>";
+		};
+		C481019B1C24C1D4000E67F7 /* Motiv Progress RingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C481019C1C24C1D4000E67F7 /* Motiv_Progress_RingUITests.m */,
+				C481019E1C24C1D4000E67F7 /* Info.plist */,
+			);
+			path = "Motiv Progress RingUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C48101701C24C1D4000E67F7 /* Motiv Progress Ring */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C48101A11C24C1D4000E67F7 /* Build configuration list for PBXNativeTarget "Motiv Progress Ring" */;
+			buildPhases = (
+				C481016D1C24C1D4000E67F7 /* Sources */,
+				C481016E1C24C1D4000E67F7 /* Frameworks */,
+				C481016F1C24C1D4000E67F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Motiv Progress Ring";
+			productName = "Motiv Progress Ring";
+			productReference = C48101711C24C1D4000E67F7 /* Motiv Progress Ring.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C481018C1C24C1D4000E67F7 /* Motiv Progress RingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C48101A41C24C1D4000E67F7 /* Build configuration list for PBXNativeTarget "Motiv Progress RingTests" */;
+			buildPhases = (
+				C48101891C24C1D4000E67F7 /* Sources */,
+				C481018A1C24C1D4000E67F7 /* Frameworks */,
+				C481018B1C24C1D4000E67F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C481018F1C24C1D4000E67F7 /* PBXTargetDependency */,
+			);
+			name = "Motiv Progress RingTests";
+			productName = "Motiv Progress RingTests";
+			productReference = C481018D1C24C1D4000E67F7 /* Motiv Progress RingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C48101971C24C1D4000E67F7 /* Motiv Progress RingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C48101A71C24C1D4000E67F7 /* Build configuration list for PBXNativeTarget "Motiv Progress RingUITests" */;
+			buildPhases = (
+				C48101941C24C1D4000E67F7 /* Sources */,
+				C48101951C24C1D4000E67F7 /* Frameworks */,
+				C48101961C24C1D4000E67F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C481019A1C24C1D4000E67F7 /* PBXTargetDependency */,
+			);
+			name = "Motiv Progress RingUITests";
+			productName = "Motiv Progress RingUITests";
+			productReference = C48101981C24C1D4000E67F7 /* Motiv Progress RingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C48101691C24C1D4000E67F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Jerry;
+				TargetAttributes = {
+					C48101701C24C1D4000E67F7 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					C481018C1C24C1D4000E67F7 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C48101701C24C1D4000E67F7;
+					};
+					C48101971C24C1D4000E67F7 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C48101701C24C1D4000E67F7;
+					};
+				};
+			};
+			buildConfigurationList = C481016C1C24C1D4000E67F7 /* Build configuration list for PBXProject "Motiv Progress Ring" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C48101681C24C1D4000E67F7;
+			productRefGroup = C48101721C24C1D4000E67F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C48101701C24C1D4000E67F7 /* Motiv Progress Ring */,
+				C481018C1C24C1D4000E67F7 /* Motiv Progress RingTests */,
+				C48101971C24C1D4000E67F7 /* Motiv Progress RingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C481016F1C24C1D4000E67F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48101871C24C1D4000E67F7 /* LaunchScreen.storyboard in Resources */,
+				C48101841C24C1D4000E67F7 /* Assets.xcassets in Resources */,
+				C481017F1C24C1D4000E67F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C481018B1C24C1D4000E67F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48101961C24C1D4000E67F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C481016D1C24C1D4000E67F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48101821C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld in Sources */,
+				C481017C1C24C1D4000E67F7 /* ViewController.m in Sources */,
+				C48101791C24C1D4000E67F7 /* AppDelegate.m in Sources */,
+				C48101761C24C1D4000E67F7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48101891C24C1D4000E67F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48101921C24C1D4000E67F7 /* Motiv_Progress_RingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48101941C24C1D4000E67F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C481019D1C24C1D4000E67F7 /* Motiv_Progress_RingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C481018F1C24C1D4000E67F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C48101701C24C1D4000E67F7 /* Motiv Progress Ring */;
+			targetProxy = C481018E1C24C1D4000E67F7 /* PBXContainerItemProxy */;
+		};
+		C481019A1C24C1D4000E67F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C48101701C24C1D4000E67F7 /* Motiv Progress Ring */;
+			targetProxy = C48101991C24C1D4000E67F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C481017D1C24C1D4000E67F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C481017E1C24C1D4000E67F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C48101851C24C1D4000E67F7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C48101861C24C1D4000E67F7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C481019F1C24C1D4000E67F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C48101A01C24C1D4000E67F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C48101A21C24C1D4000E67F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Motiv Progress Ring/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jerry.Motiv-Progress-Ring";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C48101A31C24C1D4000E67F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Motiv Progress Ring/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jerry.Motiv-Progress-Ring";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C48101A51C24C1D4000E67F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Motiv Progress RingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jerry.Motiv-Progress-RingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motiv Progress Ring.app/Motiv Progress Ring";
+			};
+			name = Debug;
+		};
+		C48101A61C24C1D4000E67F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Motiv Progress RingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jerry.Motiv-Progress-RingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motiv Progress Ring.app/Motiv Progress Ring";
+			};
+			name = Release;
+		};
+		C48101A81C24C1D4000E67F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Motiv Progress RingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jerry.Motiv-Progress-RingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Motiv Progress Ring";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C48101A91C24C1D4000E67F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Motiv Progress RingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jerry.Motiv-Progress-RingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Motiv Progress Ring";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C481016C1C24C1D4000E67F7 /* Build configuration list for PBXProject "Motiv Progress Ring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C481019F1C24C1D4000E67F7 /* Debug */,
+				C48101A01C24C1D4000E67F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C48101A11C24C1D4000E67F7 /* Build configuration list for PBXNativeTarget "Motiv Progress Ring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48101A21C24C1D4000E67F7 /* Debug */,
+				C48101A31C24C1D4000E67F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C48101A41C24C1D4000E67F7 /* Build configuration list for PBXNativeTarget "Motiv Progress RingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48101A51C24C1D4000E67F7 /* Debug */,
+				C48101A61C24C1D4000E67F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C48101A71C24C1D4000E67F7 /* Build configuration list for PBXNativeTarget "Motiv Progress RingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48101A81C24C1D4000E67F7 /* Debug */,
+				C48101A91C24C1D4000E67F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C48101801C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C48101811C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodel */,
+			);
+			currentVersion = C48101811C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodel */;
+			path = Motiv_Progress_Ring.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C48101691C24C1D4000E67F7 /* Project object */;
+}
