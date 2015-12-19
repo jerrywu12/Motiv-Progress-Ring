@@ -6,7 +6,7 @@
 //  Copyright © 2015 Jerry. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ProgressRingViewController.h"
 
 @interface ProgressRingViewController ()
 

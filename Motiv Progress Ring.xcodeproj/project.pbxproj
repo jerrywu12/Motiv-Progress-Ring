@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C48101761C24C1D4000E67F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101751C24C1D4000E67F7 /* main.m */; };
 		C48101791C24C1D4000E67F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101781C24C1D4000E67F7 /* AppDelegate.m */; };
-		C481017C1C24C1D4000E67F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C481017B1C24C1D4000E67F7 /* ViewController.m */; };
 		C481017F1C24C1D4000E67F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C481017D1C24C1D4000E67F7 /* Main.storyboard */; };
 		C48101821C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C48101801C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld */; };
 		C48101841C24C1D4000E67F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48101831C24C1D4000E67F7 /* Assets.xcassets */; };
@@ -42,8 +41,6 @@
 		C48101751C24C1D4000E67F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C48101771C24C1D4000E67F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C48101781C24C1D4000E67F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C481017A1C24C1D4000E67F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C481017B1C24C1D4000E67F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C481017E1C24C1D4000E67F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C48101811C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Motiv_Progress_Ring.xcdatamodel; sourceTree = "<group>"; };
 		C48101831C24C1D4000E67F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,8 +108,6 @@
 			children = (
 				C48101771C24C1D4000E67F7 /* AppDelegate.h */,
 				C48101781C24C1D4000E67F7 /* AppDelegate.m */,
-				C481017A1C24C1D4000E67F7 /* ViewController.h */,
-				C481017B1C24C1D4000E67F7 /* ViewController.m */,
 				C48101B01C253574000E67F7 /* someClass.h */,
 				C48101B11C253574000E67F7 /* someClass.m */,
 				C481017D1C24C1D4000E67F7 /* Main.storyboard */,
@@ -292,7 +287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48101821C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld in Sources */,
-				C481017C1C24C1D4000E67F7 /* ViewController.m in Sources */,
 				C48101B21C253574000E67F7 /* someClass.m in Sources */,
 				C48101791C24C1D4000E67F7 /* AppDelegate.m in Sources */,
 				C48101AD1C24C4E3000E67F7 /* ProgressRingViewController.m in Sources */,
