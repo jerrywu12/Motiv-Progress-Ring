@@ -47,22 +47,12 @@
     self.progressRingVC = [[ProgressRingViewController alloc] init];
     
     // Progress ring
-    self.numberOfDots = 4;
-    self.radius = 100;
-    self.dotLength = 10;
+    self.numberOfDots = 50;
+    self.radius = 120;
+    self.dotLength = 6;
     
-    // testing
-//    [self testDrawAllDots];
-    
-//    self.testRound = 0;
-//    [NSTimer scheduledTimerWithTimeInterval:0.05
-//                                     target:self
-//                                   selector:@selector(testAddDots)
-//                                   userInfo:nil
-//                                    repeats:YES];
-    
+    // Testing
     [self updateProgressToPercent:60];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,39 +60,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Tests
-
-- (void)testDrawAllDots
-{
-    [self addProgressDot:0];
-    [self addProgressDot:280];
-    [self addProgressDot:290];
-
-//    [self addProgressDot:45];
-    [self addProgressDot:90];
-//    [self addProgressDot:135];
-    [self addProgressDot:180];
-//    [self addProgressDot:225];
-    [self addProgressDot:270];
-//    [self addProgressDot:315];
-    [self addProgressDot:360];
-}
-
-- (void)testAddDots
-{
-    [self addProgressDot:10 * self.testRound];
-
-    self.testRound++;
-}
 
 #pragma mark - Reset
 
 - (void)reset
 {
-    self.totalTime = 0;
     self.percentProgress = 0;
 
-    [self updateProgressToPercent:0];
+    [self.progressDrawingTimer invalidate];
+    
+//    NSUInteger subviewsCount = self.view.subviews.count;
+//    
+//    for(int i = subviewsCount - 1; i >= 0; i--)
+//    {
+//        [[self.view viewWithTag:101] removeFromSuperview];
+//    }
 }
 
 
@@ -110,6 +82,8 @@
 
 - (void)updateProgressToPercent:(float)percent
 {
+    [self reset];
+    
     // update text "reached 75% goal"
     self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", (int)percent];
     
@@ -138,7 +112,8 @@
 
 - (void)drawProgress
 {
-    int incrementDegree = 10;
+    int incrementDegree = 360 / self.numberOfDots;
+    
     int degree = (float)self.percentProgress / 100 * 360;
 
     if (degree >= (incrementDegree * self.drawingRound)) {
@@ -170,7 +145,26 @@
     float offsetWidth = self.radius * sinf(degree * M_PI / 180);
     dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
     
+    // track dot view
+    dot.tag = 101;
+    
     [self.progressView addSubview:dot];
+}
+
+
+#pragma mark - UI Inputs
+
+- (IBAction)setProgressToPercent25:(id)sender {
+    [self updateProgressToPercent:25.0f];
+}
+
+- (IBAction)setProgressToPercent75:(id)sender {
+    [self updateProgressToPercent:75];
+}
+
+- (IBAction)updatePercentProgress:(id)sender {
+    [self updateProgressToPercent:60];
+
 }
 
 

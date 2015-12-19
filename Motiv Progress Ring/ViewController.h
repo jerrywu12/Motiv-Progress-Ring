@@ -14,5 +14,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *totalTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *progressMessageLabel;
 
+// Input UI
+- (IBAction)setProgressToPercent25:(id)sender;
+- (IBAction)setProgressToPercent75:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UITextField *percentInputField;
+- (IBAction)updatePercentProgress:(id)sender;
+
+
 @end
 
