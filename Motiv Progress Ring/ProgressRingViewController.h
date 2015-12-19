@@ -14,7 +14,7 @@
 #pragma mark - Public Properties
 
 // Progress Ring UI
-@property (nonatomic) NSInteger numberOfDots;
+@property (nonatomic) int numberOfDots;
 @property (nonatomic) NSInteger ringRadius;
 @property (nonatomic) NSInteger dotRadius;
 @property (strong, nonatomic) UIColor *dotColor;

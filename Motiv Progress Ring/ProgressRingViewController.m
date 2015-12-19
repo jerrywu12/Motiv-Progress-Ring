@@ -48,6 +48,12 @@
     [self updateProgressWithPercent:60];
 }
 
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [self.progressDrawingTimer invalidate];
+    self.progressDrawingTimer = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -58,6 +64,8 @@
 
 - (void)reset
 {
+    self.drawingRound = 0;
+
     self.percentProgress = 0;
     
     [self.progressDrawingTimer invalidate];
@@ -67,7 +75,9 @@
     
     // remove all the dots
     for (UIView *subview in self.progressView.subviews) {
-        [[subview viewWithTag:101] removeFromSuperview];
+        if (subview.tag > 0) {
+            [subview removeFromSuperview];
+        }
     }
 }
 
@@ -95,8 +105,6 @@
 
 - (void)updateProgressWithPercent:(float)percent
 {
-    [self reset];
-    
     // set percent data
     self.percentProgress = percent;
     
@@ -138,8 +146,6 @@
 
 - (void)updateProgressRingToPercent:(float)percent
 {
-    self.drawingRound = 1;
-    
     self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
                                                                  target:self
                                                                selector:@selector(drawProgress)
@@ -153,18 +159,15 @@
     
     int degree = (float)self.percentProgress / 100 * 360;
     
-    if (degree >= (incrementDegree * self.drawingRound)) {
-        
+    if (degree > (incrementDegree * self.drawingRound)) {
         [self addProgressDot:incrementDegree * self.drawingRound];
-        
         self.drawingRound++;
     }
-    else {
-        [self.progressDrawingTimer invalidate];
-        self.drawingRound = 1;
+    else if (self.drawingRound > 0) {
+        [self removeProgressDot:self.drawingRound];
+        self.drawingRound--;
     }
 }
-
 
 - (void)addProgressDot:(int)degree
 {
@@ -184,9 +187,24 @@
     dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
     
     // track dot view
-    dot.tag = 101;
+    if (degree > 0) {
+        dot.tag = self.drawingRound;
+    }
+    else {
+        dot.tag = 1;
+    }
     
     [self.progressView addSubview:dot];
+}
+
+- (void)removeProgressDot:(int)drawingRound
+{
+    // remove set of dots
+    for (UIView *subview in self.progressView.subviews) {
+        if (subview.tag == self.drawingRound) {
+            [subview removeFromSuperview];
+        }
+    }
 }
 
 
