@@ -159,7 +159,7 @@
     
     int degree = (float)self.percentProgress / 100 * 360;
     
-    if (degree > (incrementDegree * self.drawingRound)) {
+    if (degree >= (incrementDegree * self.drawingRound)) {
         [self addProgressDot:incrementDegree * self.drawingRound];
         self.drawingRound++;
     }
@@ -187,11 +187,11 @@
     dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
     
     // track dot view
-    if (degree > 0) {
+    if (self.drawingRound > 0) {
         dot.tag = self.drawingRound;
     }
     else {
-        dot.tag = 1;
+        dot.tag = 1; // avoid degree 0
     }
     
     [self.progressView addSubview:dot];
@@ -249,9 +249,7 @@
         self.dotColorCount = 0;
     }
     
-    for (UIView *subview in self.progressView.subviews) {
-        ((UIView *)[subview viewWithTag:101]).backgroundColor = color;
-    }
+    self.dotColor = color;
 }
 
 - (void)setDotColor:(UIColor *)dotColor
@@ -259,7 +257,9 @@
     _dotColor = dotColor;
     
     for (UIView *subview in self.progressView.subviews) {
-        ((UIView *)[subview viewWithTag:101]).backgroundColor = dotColor;
+        if (subview.tag > 0) {
+            subview.backgroundColor = dotColor;
+        }
     }
 }
 
@@ -284,15 +284,23 @@
     }
     
     self.dotRadius = radius;
-    
-    [self updateProgressWithPercent:self.percentProgress];
 }
 
 - (void)setDotRadius:(NSInteger)dotRadius
 {
     _dotRadius = dotRadius;
     
-    [self updateProgressWithPercent:self.percentProgress];
+    for (UIView *subview in self.progressView.subviews) {
+        if (subview.tag > 0) {
+            CGRect frame = subview.frame;
+            frame.size.height = self.dotRadius;
+            frame.size.width = self.dotRadius;
+            frame.origin.x += (float)(subview.frame.size.width - self.dotRadius) / 2;
+            frame.origin.y += (float)(subview.frame.size.height - self.dotRadius) / 2;
+            subview.frame = frame;
+            subview.layer.cornerRadius = self.dotRadius / 2.0;
+        }
+    }
 }
 
 // Reset Button
