@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Motiv Progress Ring/ViewController.m"
-            timestampString = "472195840.375194"
+            timestampString = "472196428.191043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-reset"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Motiv Progress Ring/ViewController.m"
-            timestampString = "472195840.375194"
+            timestampString = "472196428.191043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-textFieldDidEndEditing:"
             landmarkType = "5">
          </BreakpointContent>

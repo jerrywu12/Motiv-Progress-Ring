@@ -26,6 +26,9 @@
 // dot color
 - (IBAction)dotColorToggle:(id)sender;
 
+// dot diameter
+- (IBAction)dotDiameterToggle:(id)sender;
+
 
 @end
 

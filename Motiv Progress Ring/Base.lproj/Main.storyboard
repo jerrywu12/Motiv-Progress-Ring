@@ -112,6 +112,17 @@
                                     <action selector="dotColorToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJb-CR-Eum"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmq-1F-7s2">
+                                <rect key="frame" x="150" y="442" width="169" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="2HC-6A-wZd"/>
+                                </constraints>
+                                <state key="normal" title="diameter of the circle"/>
+                                <connections>
+                                    <action selector="dotDiameterToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="810-dh-iVr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.6418722751" blue="0.2585511237" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -126,11 +137,13 @@
                             <constraint firstItem="Pxu-P4-mSf" firstAttribute="leading" secondItem="Qzr-Jw-NFe" secondAttribute="leading" id="HVS-sG-fMa"/>
                             <constraint firstItem="Qzr-Jw-NFe" firstAttribute="leading" secondItem="IUq-JE-Q2c" secondAttribute="leading" id="Lbm-wx-ysx"/>
                             <constraint firstItem="vZn-O8-eaI" firstAttribute="leading" secondItem="b09-1O-pnS" secondAttribute="trailing" constant="8" symbolic="YES" id="P6P-o6-sgg"/>
+                            <constraint firstItem="cmq-1F-7s2" firstAttribute="leading" secondItem="Pxu-P4-mSf" secondAttribute="leading" id="TP8-6B-8El"/>
                             <constraint firstItem="Qzr-Jw-NFe" firstAttribute="top" secondItem="IUq-JE-Q2c" secondAttribute="bottom" constant="24" id="Wb9-5K-C0o"/>
                             <constraint firstItem="Pxu-P4-mSf" firstAttribute="trailing" secondItem="Hgu-Lb-ezP" secondAttribute="trailing" id="bMW-6y-anW"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="208" id="buG-fK-nCB"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="baseline" secondItem="vZn-O8-eaI" secondAttribute="baseline" id="cjD-sN-eMf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IUq-JE-Q2c" secondAttribute="bottom" constant="272" id="dWJ-mH-Rlb"/>
+                            <constraint firstItem="cmq-1F-7s2" firstAttribute="top" secondItem="Pxu-P4-mSf" secondAttribute="bottom" constant="14" id="nBR-Yf-olv"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="baseline" secondItem="Qzr-Jw-NFe" secondAttribute="baseline" id="qW9-hW-fsV"/>
                             <constraint firstItem="IUq-JE-Q2c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="180" id="upo-vs-NPQ"/>
                         </constraints>

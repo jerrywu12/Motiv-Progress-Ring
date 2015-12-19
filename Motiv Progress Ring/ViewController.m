@@ -18,12 +18,14 @@
 
 // Progress Ring UI
 @property NSInteger numberOfDots;
-@property NSInteger radius;
-@property NSInteger dotLength;
+@property NSInteger ringRadius;
+@property NSInteger dotRadius;
 
 @property NSInteger percentProgress;
 
+// Input Toggle
 @property int dotColorCount;
+@property int dotDiameterCount;
 
 
 // Data
@@ -48,8 +50,8 @@
     
     // Progress ring
     self.numberOfDots = 50;
-    self.radius = 120;
-    self.dotLength = 6;
+    self.ringRadius = 120;
+    self.dotRadius = 6;
     
     self.dotColorCount = 0;
     
@@ -132,18 +134,18 @@
 - (void)addProgressDot:(int)degree
 {
     // create dot view
-    UIView *dot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.dotLength, self.dotLength)];
+    UIView *dot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.dotRadius, self.dotRadius)];
     dot.backgroundColor = [UIColor whiteColor];
-    dot.layer.cornerRadius = self.dotLength / 2.0;
+    dot.layer.cornerRadius = self.dotRadius / 2.0;
 
     // normalize the position
-    CGFloat normalizeWidth = self.progressView.bounds.size.width / 2 - self.dotLength / 2;
-    CGFloat normalizeHeight = self.progressView.bounds.size.height / 2 - self.dotLength / 2;
+    CGFloat normalizeWidth = self.progressView.bounds.size.width / 2 - self.dotRadius / 2;
+    CGFloat normalizeHeight = self.progressView.bounds.size.height / 2 - self.dotRadius / 2;
     dot.frame = CGRectOffset(dot.frame, normalizeWidth, normalizeHeight);
     
-    // adjust according to radius and degree
-    float offsetHeight = self.radius * cosf(degree * M_PI / 180);
-    float offsetWidth = self.radius * sinf(degree * M_PI / 180);
+    // adjust according to ring radius and degree
+    float offsetHeight = self.ringRadius * cosf(degree * M_PI / 180);
+    float offsetWidth = self.ringRadius * sinf(degree * M_PI / 180);
     dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
     
     // track dot view
@@ -197,6 +199,31 @@
     for (UIView *subview in self.progressView.subviews) {
         ((UIView *)[subview viewWithTag:101]).backgroundColor = color;
     }
+}
+
+
+- (IBAction)dotDiameterToggle:(id)sender
+{
+    self.dotDiameterCount++;
+    
+    NSInteger radius = self.dotRadius;
+    if (self.dotDiameterCount == 1) {
+        radius = 4;
+    }
+    else if (self.dotDiameterCount == 2) {
+        radius = 10;
+    }
+    else if (self.dotDiameterCount == 3) {
+        radius = 20;
+    }
+    else {
+        radius = 6;
+        self.dotDiameterCount = 0;
+    }
+    
+    self.dotRadius = radius;
+    
+    [self updateProgressToPercent:self.percentProgress];
 }
 
 
