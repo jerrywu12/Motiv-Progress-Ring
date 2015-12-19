@@ -26,8 +26,12 @@
                                         <color key="textColor" red="0.6470588235294118" green="0.58039215686274515" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyF-Mj-C54">
-                                        <rect key="frame" x="97" y="126" width="106" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyF-Mj-C54">
+                                        <rect key="frame" x="82" y="126" width="136" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="136" id="3rP-nk-fzK"/>
+                                            <constraint firstAttribute="height" constant="33" id="MLv-ru-ySs"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="7 h 27 m">
                                                 <attributes>
@@ -39,8 +43,8 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reached 75% goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEO-T5-8bM">
-                                        <rect key="frame" x="82" y="172" width="136" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reached 75% goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEO-T5-8bM">
+                                        <rect key="frame" x="82" y="172" width="136" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -49,9 +53,14 @@
                                 <color key="backgroundColor" red="0.43137254899999999" green="0.42745098040000001" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6oK-XF-Sc2" firstAttribute="centerX" secondItem="IUq-JE-Q2c" secondAttribute="centerX" id="3N4-iJ-V1E"/>
+                                    <constraint firstItem="tyF-Mj-C54" firstAttribute="top" secondItem="6oK-XF-Sc2" secondAttribute="bottom" constant="16" id="7sW-eG-4L7"/>
+                                    <constraint firstItem="tyF-Mj-C54" firstAttribute="trailing" secondItem="SEO-T5-8bM" secondAttribute="trailing" id="Oel-Rg-r0O"/>
+                                    <constraint firstItem="tyF-Mj-C54" firstAttribute="centerX" secondItem="6oK-XF-Sc2" secondAttribute="centerX" id="Sxr-HU-HHi"/>
+                                    <constraint firstItem="SEO-T5-8bM" firstAttribute="top" secondItem="tyF-Mj-C54" secondAttribute="bottom" constant="13" id="UPd-bT-Hg7"/>
                                     <constraint firstItem="6oK-XF-Sc2" firstAttribute="top" secondItem="IUq-JE-Q2c" secondAttribute="top" constant="89" id="YlN-6x-bGz"/>
                                     <constraint firstAttribute="width" constant="300" id="giD-ZF-nHH"/>
                                     <constraint firstAttribute="height" constant="300" id="nSF-e8-jy1"/>
+                                    <constraint firstItem="tyF-Mj-C54" firstAttribute="leading" secondItem="SEO-T5-8bM" secondAttribute="leading" id="yz0-0a-7Js"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgu-Lb-ezP">

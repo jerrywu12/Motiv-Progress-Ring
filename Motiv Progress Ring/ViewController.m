@@ -29,14 +29,12 @@
 
 
 // Data
-@property int totalHr, totalMin;
+@property int hour, min;
 @property int totalTime;
 @property int totalGoalTime;
 
 // Progress Ring
 @property int drawingRound;
-
-@property int testRound;
 
 @end
 
@@ -52,6 +50,10 @@
     self.numberOfDots = 50;
     self.ringRadius = 120;
     self.dotRadius = 6;
+    
+    // Time
+    self.hour = 7;
+    self.min = 27;
     
     self.dotColorCount = 0;
     
@@ -85,6 +87,7 @@
 
 #pragma mark - UI Update
 
+
 - (void)updateProgressToPercent:(float)percent
 {
     [self reset];
@@ -92,11 +95,38 @@
     // set percent data
     self.percentProgress = percent;
     
+    // update text "7 h 27 m"
+    self.totalTimeLabel.attributedText = [self formatTimeLabelStringHour:self.hour min:self.min];
+
+    
     // update text "reached 75% goal"
     self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", (int)percent];
     
     // update progress ring
     [self updateProgressRingToPercent:percent];
+}
+
+
+- (NSMutableAttributedString *)formatTimeLabelStringHour:(int)hour min:(int)min
+{
+    // time string
+    NSDictionary * timeAttributes = @{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue" size:46.0f],
+                                      NSForegroundColorAttributeName : [UIColor whiteColor]
+                                      };
+    
+    NSDictionary * timeFormatAttributes = @{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue" size:23.0f],
+                                            NSForegroundColorAttributeName : [UIColor whiteColor]
+                                            };
+    
+    NSMutableAttributedString * mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d", hour] attributes:timeAttributes];
+    
+    [mutableAttributedString appendAttributedString:[[NSMutableAttributedString alloc] initWithString:@"h " attributes:timeFormatAttributes]];
+    
+    [mutableAttributedString appendAttributedString:[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d", min] attributes:timeAttributes]];
+    
+    [mutableAttributedString appendAttributedString:[[NSMutableAttributedString alloc] initWithString:@"m" attributes:timeFormatAttributes]];
+    
+    return mutableAttributedString;
 }
 
 
