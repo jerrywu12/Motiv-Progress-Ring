@@ -16,15 +16,15 @@
 @property (strong, nonatomic) ProgressRingViewController *progressRingVC;
 @property (strong, nonatomic) NSTimer *progressDrawingTimer;
 
+// Progress Ring UI
 @property NSInteger numberOfDots;
 @property NSInteger radius;
 @property NSInteger dotLength;
 
 @property NSInteger percentProgress;
 
+@property int dotColorCount;
 
-// Progress ring
-// number of dots
 
 // Data
 @property int totalHr, totalMin;
@@ -51,6 +51,8 @@
     self.radius = 120;
     self.dotLength = 6;
     
+    self.dotColorCount = 0;
+    
     // Testing
     [self updateProgressToPercent:60];
 }
@@ -69,12 +71,10 @@
 
     [self.progressDrawingTimer invalidate];
     
-//    NSUInteger subviewsCount = self.view.subviews.count;
-//    
-//    for(int i = subviewsCount - 1; i >= 0; i--)
-//    {
-//        [[self.view viewWithTag:101] removeFromSuperview];
-//    }
+    // remove all the dots
+    for (UIView *subview in self.progressView.subviews) {
+        [[subview viewWithTag:101] removeFromSuperview];
+    }
 }
 
 
@@ -134,7 +134,8 @@
     // create dot view
     UIView *dot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.dotLength, self.dotLength)];
     dot.backgroundColor = [UIColor whiteColor];
-    
+    dot.layer.cornerRadius = self.dotLength / 2.0;
+
     // normalize the position
     CGFloat normalizeWidth = self.progressView.bounds.size.width / 2 - self.dotLength / 2;
     CGFloat normalizeHeight = self.progressView.bounds.size.height / 2 - self.dotLength / 2;
@@ -154,7 +155,8 @@
 
 #pragma mark - UI Inputs
 
-- (IBAction)setProgressToPercent25:(id)sender {
+// Percentage
+- (IBAction)setProgressToPercent25:(id)sender{
     [self updateProgressToPercent:25.0f];
 }
 
@@ -162,9 +164,39 @@
     [self updateProgressToPercent:75];
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+}
+
 - (IBAction)updatePercentProgress:(id)sender {
     [self updateProgressToPercent:60];
 
+}
+
+// Dot Coloring
+- (IBAction)dotColorToggle:(id)sender
+{
+    self.dotColorCount++;
+
+    UIColor *color = [UIColor whiteColor];
+    if (self.dotColorCount == 1) {
+        color = [UIColor redColor];
+    }
+    else if (self.dotColorCount == 2) {
+        color = [UIColor blueColor];
+    }
+    else if (self.dotColorCount == 3) {
+        color = [UIColor blackColor];
+    }
+    else {
+        color = [UIColor whiteColor];
+        self.dotColorCount = 0;
+    }
+    
+    for (UIView *subview in self.progressView.subviews) {
+        ((UIView *)[subview viewWithTag:101]).backgroundColor = color;
+    }
 }
 
 

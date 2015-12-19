@@ -15,11 +15,16 @@
 @property (strong, nonatomic) IBOutlet UILabel *progressMessageLabel;
 
 // Input UI
+
+// Percentage
 - (IBAction)setProgressToPercent25:(id)sender;
 - (IBAction)setProgressToPercent75:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *percentInputField;
 - (IBAction)updatePercentProgress:(id)sender;
+
+// dot color
+- (IBAction)dotColorToggle:(id)sender;
 
 
 @end

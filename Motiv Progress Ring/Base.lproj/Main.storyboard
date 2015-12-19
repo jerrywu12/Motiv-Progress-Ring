@@ -71,7 +71,7 @@
                                     <action selector="setProgressToPercent75:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y6p-Lm-gDb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZn-O8-eaI">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZn-O8-eaI">
                                 <rect key="frame" x="391" y="352" width="59" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -82,6 +82,11 @@
                                     <action selector="updatePercentProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQV-sm-BQx"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="80%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b09-1O-pnS">
+                                <rect key="frame" x="333" y="352" width="50" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzr-Jw-NFe">
                                 <rect key="frame" x="150" y="352" width="50" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,11 +104,14 @@
                                     <action selector="setProgressToPercent25:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q74-Ul-C22"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="80%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b09-1O-pnS">
-                                <rect key="frame" x="333" y="352" width="50" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxu-P4-mSf">
+                                <rect key="frame" x="150" y="398" width="108" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="dot color"/>
+                                <connections>
+                                    <action selector="dotColorToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJb-CR-Eum"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.6418722751" blue="0.2585511237" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -111,12 +119,15 @@
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="208" id="1fc-YC-6Ub"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="baseline" secondItem="vZn-O8-eaI" secondAttribute="baseline" id="1oN-Fr-fXL"/>
                             <constraint firstItem="IUq-JE-Q2c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="98" id="1wx-gR-ZfS"/>
+                            <constraint firstItem="Pxu-P4-mSf" firstAttribute="top" secondItem="Qzr-Jw-NFe" secondAttribute="bottom" constant="16" id="4Yf-RQ-32v"/>
                             <constraint firstItem="b09-1O-pnS" firstAttribute="top" secondItem="vZn-O8-eaI" secondAttribute="top" id="6Fq-h9-RFT"/>
                             <constraint firstItem="vZn-O8-eaI" firstAttribute="trailing" secondItem="IUq-JE-Q2c" secondAttribute="trailing" id="B1k-Tt-2n6"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="leading" secondItem="Qzr-Jw-NFe" secondAttribute="trailing" constant="8" symbolic="YES" id="HK1-Ss-seS"/>
+                            <constraint firstItem="Pxu-P4-mSf" firstAttribute="leading" secondItem="Qzr-Jw-NFe" secondAttribute="leading" id="HVS-sG-fMa"/>
                             <constraint firstItem="Qzr-Jw-NFe" firstAttribute="leading" secondItem="IUq-JE-Q2c" secondAttribute="leading" id="Lbm-wx-ysx"/>
                             <constraint firstItem="vZn-O8-eaI" firstAttribute="leading" secondItem="b09-1O-pnS" secondAttribute="trailing" constant="8" symbolic="YES" id="P6P-o6-sgg"/>
                             <constraint firstItem="Qzr-Jw-NFe" firstAttribute="top" secondItem="IUq-JE-Q2c" secondAttribute="bottom" constant="24" id="Wb9-5K-C0o"/>
+                            <constraint firstItem="Pxu-P4-mSf" firstAttribute="trailing" secondItem="Hgu-Lb-ezP" secondAttribute="trailing" id="bMW-6y-anW"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="208" id="buG-fK-nCB"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="baseline" secondItem="vZn-O8-eaI" secondAttribute="baseline" id="cjD-sN-eMf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IUq-JE-Q2c" secondAttribute="bottom" constant="272" id="dWJ-mH-Rlb"/>
