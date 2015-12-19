@@ -10,35 +10,43 @@
 
 @interface ProgressRingViewController : UIViewController
 
+
+#pragma mark - Public Properties
+
 // Progress Ring UI
-@property NSInteger numberOfDots;
-@property NSInteger ringRadius;
-@property NSInteger dotRadius;
+@property (nonatomic) NSInteger numberOfDots;
+@property (nonatomic) NSInteger ringRadius;
+@property (nonatomic) NSInteger dotRadius;
 @property (strong, nonatomic) UIColor *dotColor;
 
 // Time Data
 @property int hour, min;
+
+// update percent progress UI
+- (void)updateProgressWithPercent:(float)percent;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *functionTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *progressMessageLabel;
 
 
-// Input UI
+// Inputs
 
-// Percentage
+// Percent Progress
 - (IBAction)setProgressToPercent25:(id)sender;
 - (IBAction)setProgressToPercent75:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *percentInputField;
 - (IBAction)updatePercentProgress:(id)sender;
 
-// dot color
+// dot color toggling
 - (IBAction)dotColorToggle:(id)sender;
 
-// dot diameter
+// dot diameter toggling
 - (IBAction)dotDiameterToggle:(id)sender;
 
+// Reset Button
 - (IBAction)resetButtonPressed:(id)sender;
 
 @end

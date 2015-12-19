@@ -12,16 +12,15 @@
 
 @property (strong, nonatomic) IBOutlet UIView *progressView;
 
+// Progress Ring
 @property (strong, nonatomic) NSTimer *progressDrawingTimer;
-
 @property NSInteger percentProgress;
+@property int drawingRound;
 
 // Input Toggle
 @property int dotColorCount;
 @property int dotDiameterCount;
 
-// Progress Ring
-@property int drawingRound;
 
 @end
 
@@ -46,7 +45,7 @@
     [self addGradientForProgressView];
     
     // Testing
-    [self updateProgressToPercent:60];
+    [self updateProgressWithPercent:60];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,7 +93,7 @@
     [self.progressView.layer insertSublayer:gradient atIndex:0];
 }
 
-- (void)updateProgressToPercent:(float)percent
+- (void)updateProgressWithPercent:(float)percent
 {
     [self reset];
     
@@ -195,11 +194,11 @@
 
 // Percentage
 - (IBAction)setProgressToPercent25:(id)sender{
-    [self updateProgressToPercent:25.0f];
+    [self updateProgressWithPercent:25.0f];
 }
 
 - (IBAction)setProgressToPercent75:(id)sender {
-    [self updateProgressToPercent:75];
+    [self updateProgressWithPercent:75];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -208,7 +207,7 @@
 }
 
 - (IBAction)updatePercentProgress:(id)sender {
-    [self updateProgressToPercent:60];
+    [self updateProgressWithPercent:60];
     
 }
 
@@ -237,6 +236,16 @@
     }
 }
 
+- (void)setDotColor:(UIColor *)dotColor
+{
+    _dotColor = dotColor;
+    
+    for (UIView *subview in self.progressView.subviews) {
+        ((UIView *)[subview viewWithTag:101]).backgroundColor = dotColor;
+    }
+}
+
+// Dot Diameter
 - (IBAction)dotDiameterToggle:(id)sender
 {
     self.dotDiameterCount++;
@@ -258,9 +267,17 @@
     
     self.dotRadius = radius;
     
-    [self updateProgressToPercent:self.percentProgress];
+    [self updateProgressWithPercent:self.percentProgress];
 }
 
+- (void)setDotRadius:(NSInteger)dotRadius
+{
+    _dotRadius = dotRadius;
+    
+    [self updateProgressWithPercent:self.percentProgress];
+}
+
+// Reset Button
 - (IBAction)resetButtonPressed:(id)sender
 {
     [self reset];
