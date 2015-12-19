@@ -7,21 +7,169 @@
 //
 
 #import "ViewController.h"
+#import "ProgressRingViewController.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) IBOutlet UIView *progressView;
+
+@property (strong, nonatomic) ProgressRingViewController *progressRingVC;
+
+@property NSInteger numberOfDots;
+@property NSInteger radius;
+@property NSInteger dotLength;
+
+
+// Progress ring
+// number of dots
+
+// Data
+@property int totalHr, totalMin;
+@property int totalTime;
+@property int totalGoalTime;
+
+@property int testRound;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.progressRingVC = [[ProgressRingViewController alloc] init];
+    
+    // Progress ring
+    self.numberOfDots = 4;
+    self.radius = 100;
+    self.dotLength = 15;
+    
+    // testing
+    [self testDrawAllDots];
+    
+//    self.testRound = 0;
+//    [NSTimer scheduledTimerWithTimeInterval:1.0
+//                                     target:self
+//                                   selector:@selector(testAddDots)
+//                                   userInfo:nil
+//                                    repeats:YES];
+    [self reset];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Tests
+
+- (void)testDrawAllDots
+{
+    [self addProgressDot:0];
+    [self addProgressDot:10];
+
+    [self addProgressDot:45];
+//    [self addProgressDot:90];
+//    [self addProgressDot:135];
+//    [self addProgressDot:180];
+//    [self addProgressDot:225];
+//    [self addProgressDot:270];
+//    [self addProgressDot:315];
+//    [self addProgressDot:360];
+}
+
+- (void)testAddDots
+{
+    [self addProgressDot:10 * self.testRound];
+
+    self.testRound++;
+}
+
+#pragma mark - Reset
+
+- (void)reset
+{
+    self.totalTime = 0;
+
+    [self updateUI];
+}
+
+
+#pragma mark - UI Update
+
+- (void)updateUI
+{
+
+    self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", self.totalTime];
+}
+
+
+#pragma mark - Progress Ring
+
+- (void)addProgressDot:(int)degree
+{
+    // create dot view
+    UIView *dot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.dotLength, self.dotLength)];
+    dot.backgroundColor = [UIColor whiteColor];
+    
+    // normalize the position
+    CGFloat normalizeWidth = self.progressView.bounds.size.width / 2 - self.dotLength / 2;
+    CGFloat normalizeHeight = self.progressView.bounds.size.height / 2 - self.dotLength / 2;
+    dot.frame = CGRectOffset(dot.frame, normalizeWidth, normalizeHeight);
+    
+    // adjust according to radius and degree
+    // deg 0 and everything > 360
+    if (degree == 0 || degree >= 360) {
+        dot.frame = CGRectOffset(dot.frame, 0, 0 - self.radius);
+    }
+    // deg 0 ~ 90
+    else if (degree > 0 && degree < 90) {
+        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
+        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
+        dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
+    }
+    // deg 90
+    else if (degree == 90) {
+        dot.frame = CGRectOffset(dot.frame, self.radius, 0);
+    }
+    // deg 90 ~ 180
+    else if (degree > 90 && degree < 180) {
+        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
+        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
+        dot.frame = CGRectOffset(dot.frame, 0 - offsetWidth, offsetHeight);
+    }
+    // deg 180
+    else if (degree == 180) {
+        dot.frame = CGRectOffset(dot.frame, 0, self.radius);
+    }
+    // deg 180 ~ 270
+    else if (degree > 180 && degree < 270) {
+        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
+        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
+        dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
+    }
+    // deg 270
+    else if (degree == 270) {
+        dot.frame = CGRectOffset(dot.frame, 0 - self.radius, 0);
+    }
+    // deg 270 ~ 360
+    else if (degree > 270 && degree < 360) {
+        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
+        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
+        dot.frame = CGRectOffset(dot.frame, 0 - offsetWidth, offsetHeight);
+    }
+    
+    [self.progressView addSubview:dot];
+}
+
+
+
+
++ (id)loadController:(Class)classType {
+    NSString *className = NSStringFromClass(classType);
+    UIViewController *controller = [[classType alloc] initWithNibName:className bundle:nil];
+    return controller;
 }
 
 @end
