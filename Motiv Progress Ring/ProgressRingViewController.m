@@ -87,14 +87,14 @@
 - (void)addGradientForProgressView
 {
     // Gradient
-    UIColor *topColor = [UIColor colorWithRed:110.0f/255.0f
-                                        green:110.0f/255.0f
-                                         blue:150.0f/255.0f
+    UIColor *topColor = [UIColor colorWithRed:130.0f/255.0f
+                                        green:130.0f/255.0f
+                                         blue:170.0f/255.0f
                                         alpha:1.0f];
     
-    UIColor *bottomColor = [UIColor colorWithRed:50.0f/255.0f
-                                           green:50.0f/255.0f
-                                            blue:70.0f/255.0f
+    UIColor *bottomColor = [UIColor colorWithRed:40.0f/255.0f
+                                           green:40.0f/255.0f
+                                            blue:60.0f/255.0f
                                            alpha:1.0f];
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
