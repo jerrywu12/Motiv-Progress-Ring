@@ -46,14 +46,14 @@
     self.dotLength = 15;
     
     // testing
-    [self testDrawAllDots];
+//    [self testDrawAllDots];
     
-//    self.testRound = 0;
-//    [NSTimer scheduledTimerWithTimeInterval:1.0
-//                                     target:self
-//                                   selector:@selector(testAddDots)
-//                                   userInfo:nil
-//                                    repeats:YES];
+    self.testRound = 0;
+    [NSTimer scheduledTimerWithTimeInterval:0.1
+                                     target:self
+                                   selector:@selector(testAddDots)
+                                   userInfo:nil
+                                    repeats:YES];
     [self reset];
 }
 
@@ -67,16 +67,17 @@
 - (void)testDrawAllDots
 {
     [self addProgressDot:0];
-    [self addProgressDot:10];
+    [self addProgressDot:280];
+    [self addProgressDot:290];
 
-    [self addProgressDot:45];
-//    [self addProgressDot:90];
+//    [self addProgressDot:45];
+    [self addProgressDot:90];
 //    [self addProgressDot:135];
-//    [self addProgressDot:180];
+    [self addProgressDot:180];
 //    [self addProgressDot:225];
-//    [self addProgressDot:270];
+    [self addProgressDot:270];
 //    [self addProgressDot:315];
-//    [self addProgressDot:360];
+    [self addProgressDot:360];
 }
 
 - (void)testAddDots
@@ -119,46 +120,9 @@
     dot.frame = CGRectOffset(dot.frame, normalizeWidth, normalizeHeight);
     
     // adjust according to radius and degree
-    // deg 0 and everything > 360
-    if (degree == 0 || degree >= 360) {
-        dot.frame = CGRectOffset(dot.frame, 0, 0 - self.radius);
-    }
-    // deg 0 ~ 90
-    else if (degree > 0 && degree < 90) {
-        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
-        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
-        dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
-    }
-    // deg 90
-    else if (degree == 90) {
-        dot.frame = CGRectOffset(dot.frame, self.radius, 0);
-    }
-    // deg 90 ~ 180
-    else if (degree > 90 && degree < 180) {
-        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
-        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
-        dot.frame = CGRectOffset(dot.frame, 0 - offsetWidth, offsetHeight);
-    }
-    // deg 180
-    else if (degree == 180) {
-        dot.frame = CGRectOffset(dot.frame, 0, self.radius);
-    }
-    // deg 180 ~ 270
-    else if (degree > 180 && degree < 270) {
-        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
-        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
-        dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
-    }
-    // deg 270
-    else if (degree == 270) {
-        dot.frame = CGRectOffset(dot.frame, 0 - self.radius, 0);
-    }
-    // deg 270 ~ 360
-    else if (degree > 270 && degree < 360) {
-        float offsetHeight = self.radius * sinf(degree * M_PI / 180);
-        float offsetWidth = self.radius * cosf(degree * M_PI / 180);
-        dot.frame = CGRectOffset(dot.frame, 0 - offsetWidth, offsetHeight);
-    }
+    float offsetHeight = self.radius * cosf(degree * M_PI / 180);
+    float offsetWidth = self.radius * sinf(degree * M_PI / 180);
+    dot.frame = CGRectOffset(dot.frame, offsetWidth, 0 - offsetHeight);
     
     [self.progressView addSubview:dot];
 }
