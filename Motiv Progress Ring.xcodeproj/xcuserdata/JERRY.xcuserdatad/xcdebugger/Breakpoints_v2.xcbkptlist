@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Motiv Progress Ring/ViewController.m"
-            timestampString = "472190336.645213"
+            timestampString = "472192312.61824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-testAddDots"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-updateProgressToPercent:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

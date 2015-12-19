@@ -14,10 +14,13 @@
 @property (strong, nonatomic) IBOutlet UIView *progressView;
 
 @property (strong, nonatomic) ProgressRingViewController *progressRingVC;
+@property (strong, nonatomic) NSTimer *progressDrawingTimer;
 
 @property NSInteger numberOfDots;
 @property NSInteger radius;
 @property NSInteger dotLength;
+
+@property NSInteger percentProgress;
 
 
 // Progress ring
@@ -27,6 +30,9 @@
 @property int totalHr, totalMin;
 @property int totalTime;
 @property int totalGoalTime;
+
+// Progress Ring
+@property int drawingRound;
 
 @property int testRound;
 
@@ -43,18 +49,20 @@
     // Progress ring
     self.numberOfDots = 4;
     self.radius = 100;
-    self.dotLength = 15;
+    self.dotLength = 10;
     
     // testing
 //    [self testDrawAllDots];
     
-    self.testRound = 0;
-    [NSTimer scheduledTimerWithTimeInterval:0.1
-                                     target:self
-                                   selector:@selector(testAddDots)
-                                   userInfo:nil
-                                    repeats:YES];
-    [self reset];
+//    self.testRound = 0;
+//    [NSTimer scheduledTimerWithTimeInterval:0.05
+//                                     target:self
+//                                   selector:@selector(testAddDots)
+//                                   userInfo:nil
+//                                    repeats:YES];
+    
+    [self updateProgressToPercent:60];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,21 +100,59 @@
 - (void)reset
 {
     self.totalTime = 0;
+    self.percentProgress = 0;
 
-    [self updateUI];
+    [self updateProgressToPercent:0];
 }
 
 
 #pragma mark - UI Update
 
-- (void)updateUI
+- (void)updateProgressToPercent:(float)percent
 {
-
-    self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", self.totalTime];
+    // update text "reached 75% goal"
+    self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", (int)percent];
+    
+    // update progress ring
+    [self updateProgressRingToPercent:percent];
 }
 
 
 #pragma mark - Progress Ring
+
+- (void)updateProgressRingToPercent:(float)percent
+{
+    // set percent data
+    self.percentProgress = percent;
+    
+    self.drawingRound = 1;
+
+    self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
+                                                                 target:self
+                                                               selector:@selector(drawProgress)
+                                                               userInfo:nil
+                                                                repeats:YES];
+    
+    
+}
+
+- (void)drawProgress
+{
+    int incrementDegree = 10;
+    int degree = (float)self.percentProgress / 100 * 360;
+
+    if (degree >= (incrementDegree * self.drawingRound)) {
+        
+        [self addProgressDot:incrementDegree * self.drawingRound];
+        
+        self.drawingRound++;
+    }
+    else {
+        [self.progressDrawingTimer invalidate];
+        self.drawingRound = 1;
+    }
+}
+
 
 - (void)addProgressDot:(int)degree
 {
@@ -127,13 +173,5 @@
     [self.progressView addSubview:dot];
 }
 
-
-
-
-+ (id)loadController:(Class)classType {
-    NSString *className = NSStringFromClass(classType);
-    UIViewController *controller = [[classType alloc] initWithNibName:className bundle:nil];
-    return controller;
-}
 
 @end
