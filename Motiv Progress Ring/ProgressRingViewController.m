@@ -43,6 +43,8 @@
     
     self.dotColorCount = 0;
     
+    [self addGradientForProgressView];
+    
     // Testing
     [self updateProgressToPercent:60];
 }
@@ -73,6 +75,24 @@
 
 #pragma mark - UI Update
 
+- (void)addGradientForProgressView
+{
+    // Gradient
+    UIColor *topColor = [UIColor colorWithRed:110.0f/255.0f
+                                        green:110.0f/255.0f
+                                         blue:150.0f/255.0f
+                                        alpha:1.0f];
+    
+    UIColor *bottomColor = [UIColor colorWithRed:50.0f/255.0f
+                                           green:50.0f/255.0f
+                                            blue:70.0f/255.0f
+                                           alpha:1.0f];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.progressView.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[topColor CGColor], (id)[bottomColor CGColor], nil];
+    [self.progressView.layer insertSublayer:gradient atIndex:0];
+}
 
 - (void)updateProgressToPercent:(float)percent
 {
@@ -91,7 +111,6 @@
     // update progress ring
     [self updateProgressRingToPercent:percent];
 }
-
 
 - (NSMutableAttributedString *)formatTimeLabelStringHour:(int)hour min:(int)min
 {
@@ -126,9 +145,7 @@
                                                                  target:self
                                                                selector:@selector(drawProgress)
                                                                userInfo:nil
-                                                                repeats:YES];
-    
-    
+                                                                repeats:YES];    
 }
 
 - (void)drawProgress
@@ -219,7 +236,6 @@
         ((UIView *)[subview viewWithTag:101]).backgroundColor = color;
     }
 }
-
 
 - (IBAction)dotDiameterToggle:(id)sender
 {

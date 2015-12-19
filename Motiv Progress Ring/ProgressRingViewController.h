@@ -19,7 +19,6 @@
 // Time Data
 @property int hour, min;
 
-
 @property (strong, nonatomic) IBOutlet UILabel *functionTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *progressMessageLabel;
