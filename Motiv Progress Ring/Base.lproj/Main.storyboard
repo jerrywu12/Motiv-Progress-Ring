@@ -80,22 +80,6 @@
                                     <action selector="setProgressToPercent75:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y6p-Lm-gDb"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZn-O8-eaI">
-                                <rect key="frame" x="391" y="352" width="59" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="sBS-9b-l5P"/>
-                                </constraints>
-                                <state key="normal" title="update"/>
-                                <connections>
-                                    <action selector="updatePercentProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQV-sm-BQx"/>
-                                </connections>
-                            </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="80%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b09-1O-pnS">
-                                <rect key="frame" x="333" y="352" width="50" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzr-Jw-NFe">
                                 <rect key="frame" x="150" y="352" width="50" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,23 +129,18 @@
                         <constraints>
                             <constraint firstItem="IUq-JE-Q2c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1JR-iu-2ZP"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="208" id="1fc-YC-6Ub"/>
-                            <constraint firstItem="Hgu-Lb-ezP" firstAttribute="baseline" secondItem="vZn-O8-eaI" secondAttribute="baseline" id="1oN-Fr-fXL"/>
                             <constraint firstItem="IUq-JE-Q2c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="98" id="1wx-gR-ZfS"/>
                             <constraint firstItem="63E-6V-OoG" firstAttribute="leading" secondItem="cmq-1F-7s2" secondAttribute="leading" id="3kV-AD-i7r"/>
                             <constraint firstItem="Pxu-P4-mSf" firstAttribute="top" secondItem="Qzr-Jw-NFe" secondAttribute="bottom" constant="8" id="4Yf-RQ-32v"/>
-                            <constraint firstItem="b09-1O-pnS" firstAttribute="top" secondItem="vZn-O8-eaI" secondAttribute="top" id="6Fq-h9-RFT"/>
-                            <constraint firstItem="vZn-O8-eaI" firstAttribute="trailing" secondItem="IUq-JE-Q2c" secondAttribute="trailing" id="B1k-Tt-2n6"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="leading" secondItem="Qzr-Jw-NFe" secondAttribute="trailing" constant="8" symbolic="YES" id="HK1-Ss-seS"/>
                             <constraint firstItem="Pxu-P4-mSf" firstAttribute="leading" secondItem="Qzr-Jw-NFe" secondAttribute="leading" id="HVS-sG-fMa"/>
                             <constraint firstItem="Qzr-Jw-NFe" firstAttribute="leading" secondItem="IUq-JE-Q2c" secondAttribute="leading" id="Lbm-wx-ysx"/>
-                            <constraint firstItem="vZn-O8-eaI" firstAttribute="leading" secondItem="b09-1O-pnS" secondAttribute="trailing" constant="8" symbolic="YES" id="P6P-o6-sgg"/>
                             <constraint firstItem="63E-6V-OoG" firstAttribute="trailing" secondItem="Qzr-Jw-NFe" secondAttribute="trailing" id="Rrl-Ug-rcX"/>
                             <constraint firstItem="cmq-1F-7s2" firstAttribute="leading" secondItem="Pxu-P4-mSf" secondAttribute="leading" id="SK4-HJ-fuE"/>
                             <constraint firstItem="Qzr-Jw-NFe" firstAttribute="top" secondItem="IUq-JE-Q2c" secondAttribute="bottom" constant="24" id="Wb9-5K-C0o"/>
                             <constraint firstItem="cmq-1F-7s2" firstAttribute="top" secondItem="Pxu-P4-mSf" secondAttribute="bottom" constant="8" symbolic="YES" id="bJl-T9-hRF"/>
                             <constraint firstItem="Pxu-P4-mSf" firstAttribute="trailing" secondItem="Hgu-Lb-ezP" secondAttribute="trailing" id="bMW-6y-anW"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="208" id="buG-fK-nCB"/>
-                            <constraint firstItem="Hgu-Lb-ezP" firstAttribute="baseline" secondItem="vZn-O8-eaI" secondAttribute="baseline" id="cjD-sN-eMf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IUq-JE-Q2c" secondAttribute="bottom" constant="272" id="dWJ-mH-Rlb"/>
                             <constraint firstItem="63E-6V-OoG" firstAttribute="top" secondItem="cmq-1F-7s2" secondAttribute="bottom" constant="8" symbolic="YES" id="gPX-kM-kxA"/>
                             <constraint firstItem="Hgu-Lb-ezP" firstAttribute="baseline" secondItem="Qzr-Jw-NFe" secondAttribute="baseline" id="qW9-hW-fsV"/>
@@ -172,14 +151,12 @@
                                 <exclude reference="1wx-gR-ZfS"/>
                                 <exclude reference="upo-vs-NPQ"/>
                                 <exclude reference="1fc-YC-6Ub"/>
-                                <exclude reference="1oN-Fr-fXL"/>
                                 <exclude reference="buG-fK-nCB"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="functionTitleLabel" destination="6oK-XF-Sc2" id="UBA-uT-Hn8"/>
-                        <outlet property="percentInputField" destination="b09-1O-pnS" id="ngr-xW-aec"/>
                         <outlet property="progressMessageLabel" destination="SEO-T5-8bM" id="Ipr-4K-251"/>
                         <outlet property="progressView" destination="IUq-JE-Q2c" id="w4U-hx-YSG"/>
                         <outlet property="totalTimeLabel" destination="tyF-Mj-C54" id="qOb-vT-UbP"/>

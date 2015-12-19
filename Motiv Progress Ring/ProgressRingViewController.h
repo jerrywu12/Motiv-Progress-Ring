@@ -37,9 +37,6 @@
 - (IBAction)setProgressToPercent25:(id)sender;
 - (IBAction)setProgressToPercent75:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UITextField *percentInputField;
-- (IBAction)updatePercentProgress:(id)sender;
-
 // dot color toggling
 - (IBAction)dotColorToggle:(id)sender;
 

@@ -41,10 +41,9 @@
     self.hour = 7;
     self.min = 27;
     
-    
     [self addGradientForProgressView];
     
-    // Testing
+    // Testing (init value)
     [self updateProgressWithPercent:60];
 }
 
@@ -57,28 +56,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark - Reset
-
-- (void)reset
-{
-    self.drawingRound = 0;
-
-    self.percentProgress = 0;
-    
-    [self.progressDrawingTimer invalidate];
-    
-    // reset label to 0%
-    self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", 0];
-    
-    // remove all the dots
-    for (UIView *subview in self.progressView.subviews) {
-        if (subview.tag > 0) {
-            [subview removeFromSuperview];
-        }
-    }
 }
 
 
@@ -111,7 +88,6 @@
     // update text "7 h 27 m"
     self.totalTimeLabel.attributedText = [self formatTimeLabelStringHour:self.hour min:self.min];
     
-    
     // update text "reached 75% goal"
     self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", (int)percent];
     
@@ -142,12 +118,33 @@
 }
 
 
+#pragma mark - Reset
+
+- (void)reset
+{
+    self.drawingRound = 0;
+    
+    self.percentProgress = 0;
+    
+    [self.progressDrawingTimer invalidate];
+    
+    // reset label to 0%
+    self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", 0];
+    
+    // remove all the dots
+    for (UIView *subview in self.progressView.subviews) {
+        if (subview.tag > 0) {
+            [subview removeFromSuperview];
+        }
+    }
+}
+
+
 #pragma mark - Progress Ring
 
 - (void)updateProgressRingToPercent:(float)percent
 {
     int incrementDegree = 360 / self.numberOfDots;
-    
     int degree = (float)self.percentProgress / 100 * 360;
     
     if (degree >= (incrementDegree * self.drawingRound)) {
@@ -245,16 +242,6 @@
 
 - (IBAction)setProgressToPercent75:(id)sender {
     [self updateProgressWithPercent:75];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    
-}
-
-- (IBAction)updatePercentProgress:(id)sender {
-    [self updateProgressWithPercent:60];
-    
 }
 
 // Dot Coloring
