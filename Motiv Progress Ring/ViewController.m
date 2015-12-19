@@ -73,6 +73,9 @@
 
     [self.progressDrawingTimer invalidate];
     
+    // reset label to 0%
+    self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", 0];
+
     // remove all the dots
     for (UIView *subview in self.progressView.subviews) {
         [[subview viewWithTag:101] removeFromSuperview];
@@ -86,6 +89,9 @@
 {
     [self reset];
     
+    // set percent data
+    self.percentProgress = percent;
+    
     // update text "reached 75% goal"
     self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", (int)percent];
     
@@ -98,9 +104,6 @@
 
 - (void)updateProgressRingToPercent:(float)percent
 {
-    // set percent data
-    self.percentProgress = percent;
-    
     self.drawingRound = 1;
 
     self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
@@ -224,6 +227,11 @@
     self.dotRadius = radius;
     
     [self updateProgressToPercent:self.percentProgress];
+}
+
+- (IBAction)resetButtonPressed:(id)sender
+{
+    [self reset];
 }
 
 

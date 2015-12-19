@@ -29,6 +29,7 @@
 // dot diameter
 - (IBAction)dotDiameterToggle:(id)sender;
 
+- (IBAction)resetButtonPressed:(id)sender;
 
 @end
 
