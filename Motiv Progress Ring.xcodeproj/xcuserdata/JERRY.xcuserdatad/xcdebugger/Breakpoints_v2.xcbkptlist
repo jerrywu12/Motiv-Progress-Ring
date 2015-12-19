@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Motiv Progress Ring/ProgressRingViewController.m"
-            timestampString = "472207011.877463"
+            timestampString = "472207439.571125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "-drawProgress"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Motiv Progress Ring/ProgressRingViewController.m"
-            timestampString = "472207011.877463"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "-drawProgress"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-increaseProgress"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

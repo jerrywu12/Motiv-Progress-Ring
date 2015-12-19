@@ -146,17 +146,30 @@
 
 - (void)updateProgressRingToPercent:(float)percent
 {
-    self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
-                                                                 target:self
-                                                               selector:@selector(drawProgress)
-                                                               userInfo:nil
-                                                                repeats:YES];    
-}
-
-- (void)drawProgress
-{
     int incrementDegree = 360 / self.numberOfDots;
     
+    int degree = (float)self.percentProgress / 100 * 360;
+    
+    if (degree >= (incrementDegree * self.drawingRound)) {
+        
+        self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
+                                                                     target:self
+                                                                   selector:@selector(increaseProgress)
+                                                                   userInfo:nil
+                                                                    repeats:YES];
+    }
+    else {
+        self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
+                                                                     target:self
+                                                                   selector:@selector(decreaseProgress)
+                                                                   userInfo:nil
+                                                                    repeats:YES];
+    }
+}
+
+- (void)increaseProgress
+{
+    int incrementDegree = 360 / self.numberOfDots;
     int degree = (float)self.percentProgress / 100 * 360;
     
     if (degree >= (incrementDegree * self.drawingRound)) {
@@ -164,8 +177,23 @@
         self.drawingRound++;
     }
     else if (self.drawingRound > 0) {
+        [self.progressDrawingTimer invalidate];
+        self.progressDrawingTimer = nil;
+    }
+}
+
+- (void)decreaseProgress
+{
+    int incrementDegree = 360 / self.numberOfDots;
+    int degree = (float)self.percentProgress / 100 * 360;
+    
+    if (degree < (incrementDegree * self.drawingRound)) {
         [self removeProgressDot:self.drawingRound];
         self.drawingRound--;
+    }
+    else {
+        [self.progressDrawingTimer invalidate];
+        self.progressDrawingTimer = nil;
     }
 }
 
