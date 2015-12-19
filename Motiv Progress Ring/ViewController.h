@@ -7,12 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProgressRingViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController 
+
+// Progress Ring UI
+@property NSInteger numberOfDots;
+@property NSInteger ringRadius;
+@property NSInteger dotRadius;
+@property (strong, nonatomic) UIColor *dotColor;
+
+// Time Data
+@property int hour, min;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *functionTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *progressMessageLabel;
+
 
 // Input UI
 

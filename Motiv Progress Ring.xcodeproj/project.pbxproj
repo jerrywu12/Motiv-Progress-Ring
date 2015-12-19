@@ -17,6 +17,7 @@
 		C48101921C24C1D4000E67F7 /* Motiv_Progress_RingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101911C24C1D4000E67F7 /* Motiv_Progress_RingTests.m */; };
 		C481019D1C24C1D4000E67F7 /* Motiv_Progress_RingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C481019C1C24C1D4000E67F7 /* Motiv_Progress_RingUITests.m */; };
 		C48101AD1C24C4E3000E67F7 /* ProgressRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101AB1C24C4E3000E67F7 /* ProgressRingViewController.m */; };
+		C48101B21C253574000E67F7 /* someClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C48101B11C253574000E67F7 /* someClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		C481019E1C24C1D4000E67F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C48101AA1C24C4E3000E67F7 /* ProgressRingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressRingViewController.h; sourceTree = "<group>"; };
 		C48101AB1C24C4E3000E67F7 /* ProgressRingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressRingViewController.m; sourceTree = "<group>"; };
+		C48101B01C253574000E67F7 /* someClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = someClass.h; sourceTree = "<group>"; };
+		C48101B11C253574000E67F7 /* someClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = someClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				C48101781C24C1D4000E67F7 /* AppDelegate.m */,
 				C481017A1C24C1D4000E67F7 /* ViewController.h */,
 				C481017B1C24C1D4000E67F7 /* ViewController.m */,
+				C48101B01C253574000E67F7 /* someClass.h */,
+				C48101B11C253574000E67F7 /* someClass.m */,
 				C481017D1C24C1D4000E67F7 /* Main.storyboard */,
 				C48101AF1C24C4ED000E67F7 /* UI Elements */,
 				C48101831C24C1D4000E67F7 /* Assets.xcassets */,
@@ -288,6 +293,7 @@
 			files = (
 				C48101821C24C1D4000E67F7 /* Motiv_Progress_Ring.xcdatamodeld in Sources */,
 				C481017C1C24C1D4000E67F7 /* ViewController.m in Sources */,
+				C48101B21C253574000E67F7 /* someClass.m in Sources */,
 				C48101791C24C1D4000E67F7 /* AppDelegate.m in Sources */,
 				C48101AD1C24C4E3000E67F7 /* ProgressRingViewController.m in Sources */,
 				C48101761C24C1D4000E67F7 /* main.m in Sources */,

@@ -16,22 +16,11 @@
 @property (strong, nonatomic) ProgressRingViewController *progressRingVC;
 @property (strong, nonatomic) NSTimer *progressDrawingTimer;
 
-// Progress Ring UI
-@property NSInteger numberOfDots;
-@property NSInteger ringRadius;
-@property NSInteger dotRadius;
-
 @property NSInteger percentProgress;
 
 // Input Toggle
 @property int dotColorCount;
 @property int dotDiameterCount;
-
-
-// Data
-@property int hour, min;
-@property int totalTime;
-@property int totalGoalTime;
 
 // Progress Ring
 @property int drawingRound;
@@ -44,12 +33,11 @@
 {
     [super viewDidLoad];
     
-    self.progressRingVC = [[ProgressRingViewController alloc] init];
-    
     // Progress ring
     self.numberOfDots = 50;
     self.ringRadius = 120;
     self.dotRadius = 6;
+    self.dotColor = [UIColor whiteColor];
     
     // Time
     self.hour = 7;
