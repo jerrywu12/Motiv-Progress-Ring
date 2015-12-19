@@ -35,12 +35,12 @@
     self.ringRadius = 120;
     self.dotRadius = 6;
     self.dotColor = [UIColor whiteColor];
-    
+    self.dotColorCount = 0;
+
     // Time
     self.hour = 7;
     self.min = 27;
     
-    self.dotColorCount = 0;
     
     [self addGradientForProgressView];
     
@@ -173,7 +173,7 @@
 {
     // create dot view
     UIView *dot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.dotRadius, self.dotRadius)];
-    dot.backgroundColor = [UIColor whiteColor];
+    dot.backgroundColor = self.dotColor;
     dot.layer.cornerRadius = self.dotRadius / 2.0;
     
     // normalize the position
