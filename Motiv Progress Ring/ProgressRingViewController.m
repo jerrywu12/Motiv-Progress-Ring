@@ -13,7 +13,9 @@
 @property (strong, nonatomic) IBOutlet UIView *progressView;
 
 // Progress Ring
-@property (strong, nonatomic) NSTimer *progressDrawingTimer;
+@property (strong, nonatomic) NSTimer *progressDrawingTimerInc;
+@property (strong, nonatomic) NSTimer *progressDrawingTimerDec;
+
 @property NSInteger percentProgress;
 @property int drawingRound;
 
@@ -49,8 +51,10 @@
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    [self.progressDrawingTimer invalidate];
-    self.progressDrawingTimer = nil;
+    [self.progressDrawingTimerInc invalidate];
+    self.progressDrawingTimerInc = nil;
+    [self.progressDrawingTimerDec invalidate];
+    self.progressDrawingTimerDec = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,8 +130,9 @@
     
     self.percentProgress = 0;
     
-    [self.progressDrawingTimer invalidate];
-    
+    [self.progressDrawingTimerInc invalidate];
+    [self.progressDrawingTimerDec invalidate];
+
     // reset label to 0%
     self.progressMessageLabel.text = [NSString stringWithFormat:@"reached %i%% goal", 0];
     
@@ -149,14 +154,14 @@
     
     if (degree >= (incrementDegree * self.drawingRound)) {
         
-        self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
+        self.progressDrawingTimerInc = [NSTimer scheduledTimerWithTimeInterval:0.03
                                                                      target:self
                                                                    selector:@selector(increaseProgress)
                                                                    userInfo:nil
                                                                     repeats:YES];
     }
     else {
-        self.progressDrawingTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
+        self.progressDrawingTimerDec = [NSTimer scheduledTimerWithTimeInterval:0.03
                                                                      target:self
                                                                    selector:@selector(decreaseProgress)
                                                                    userInfo:nil
@@ -174,8 +179,8 @@
         self.drawingRound++;
     }
     else if (self.drawingRound > 0) {
-        [self.progressDrawingTimer invalidate];
-        self.progressDrawingTimer = nil;
+        [self.progressDrawingTimerInc invalidate];
+        self.progressDrawingTimerInc = nil;
     }
 }
 
@@ -189,8 +194,8 @@
         self.drawingRound--;
     }
     else {
-        [self.progressDrawingTimer invalidate];
-        self.progressDrawingTimer = nil;
+        [self.progressDrawingTimerDec invalidate];
+        self.progressDrawingTimerDec = nil;
     }
 }
 
